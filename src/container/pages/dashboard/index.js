@@ -25,10 +25,12 @@ function Dashboard() {
 
   useEffect(() => {
     (async () => {
-      const dataUserFirebase = getDataFromFirebase(userData, dispatch);
+      console.log(userData.uid);
+      const dataUserFirebase = await getDataFromFirebase(userData, dispatch);
       return dataUserFirebase;
     })();
-  }, [dispatch, userData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!dataGlobal.isLogin) history.push('/login');
 
