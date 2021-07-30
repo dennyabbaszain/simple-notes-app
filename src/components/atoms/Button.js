@@ -13,7 +13,7 @@ export const Button = ({ action, title, isLoading, isUpdate, className }) => {
   }
 
   return (
-    <button onClick={action} className='btn'>
+    <button onClick={action} className={`btn ${className}`}>
       {title}
     </button>
   );

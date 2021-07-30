@@ -44,3 +44,18 @@
     }
   }
 }
+.btn-register {
+  background: aquamarine;
+  position: absolute;
+  bottom: 100px;
+  border-radius: 11px;
+  padding: 7px 20px;
+  font-weight: 500;
+  border: 1px solid aquamarine;
+  text-transform: uppercase;
+  transition: all ease 0.35s;
+  &:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+}

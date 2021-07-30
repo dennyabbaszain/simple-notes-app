@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Footer from '../../../components/atoms/footer';
 // local
 import { loginUserWithFirebase } from '../../../config/redux/action/action';
 import { Button } from './../../../components/atoms/Button';
@@ -15,7 +16,7 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const loading = useSelector((state) => state.loading);
+  const stateGlobal = useSelector((state) => state);
 
   const handleLoginUser = async () => {
     const res = await loginUserWithFirebase(email, password, dispatch).catch(
@@ -43,8 +44,18 @@ function Login() {
           }}
           placeholder='Password'
         />
-        <Button action={handleLoginUser} title='Login' isLoading={loading} />
+        <Button
+          action={handleLoginUser}
+          title='Login'
+          isLoading={stateGlobal.isLoading}
+        />
       </div>
+      <Button
+        action={() => history.push('/register')}
+        title='not have account ? register first'
+        className='btn-register'
+      />
+      <Footer />
     </div>
   );
 }

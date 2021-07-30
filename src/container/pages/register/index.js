@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // local
+import Footer from '../../../components/atoms/footer';
 import { registerUserWithFirebase } from '../../../config/redux/action/action';
 import { Button } from './../../../components/atoms/Button';
 // style
@@ -49,7 +50,13 @@ function Register() {
           title='Register'
           isLoading={loading}
         />
-      </div>
+      </div>{' '}
+      <Button
+        action={() => history.push('/login')}
+        title='have account ? sign in'
+        className='btn-register'
+      />
+      <Footer />
     </div>
   );
 }
