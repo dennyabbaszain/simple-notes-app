@@ -65,8 +65,8 @@ export const addDataToFirebase = (data) => {
   });
 };
 
-export const getDataFromFirebase = (userId, dispatch) => {
-  const notesURL = database.ref('notes/' + userId);
+export const getDataFromFirebase = (userData, dispatch) => {
+  const notesURL = database.ref('notes/' + userData.uid);
   return new Promise((resolve, reject) => {
     notesURL.on('value', (snapshot) => {
       const data = [];
