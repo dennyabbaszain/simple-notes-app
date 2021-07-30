@@ -24,10 +24,8 @@ function Dashboard() {
   });
 
   useEffect(() => {
-    (async () => {
-      const dataUserFirebase = await getDataFromFirebase(userData, dispatch);
-      return dataUserFirebase;
-    })();
+    const dataUserFirebase = getDataFromFirebase(userData, dispatch);
+    return dataUserFirebase;
   }, [dispatch, userData]);
 
   if (!dataGlobal.isLogin) history.push('/login');
