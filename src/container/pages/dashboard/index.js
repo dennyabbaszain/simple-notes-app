@@ -31,7 +31,7 @@ function Dashboard() {
       );
       return dataUserFirebase;
     })();
-  }, [dispatch, userData.uid]);
+  }, [dispatch, userData]);
 
   if (!dataGlobal.isLogin) history.push('/login');
 
