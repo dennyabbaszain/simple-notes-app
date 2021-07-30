@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { Button } from '../../../components/atoms/Button';
 import {
   addDataToFirebase,
@@ -10,9 +11,10 @@ import {
 import './dashboard.scss';
 
 function Dashboard() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const userData = JSON.parse(localStorage.getItem('userData'));
-  const dataNotes = useSelector((state) => state.notes);
+  const dataGlobal = useSelector((state) => state);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [state, setState] = useState({
@@ -30,6 +32,8 @@ function Dashboard() {
       return dataUserFirebase;
     })();
   }, [dispatch, userData]);
+
+  if (!dataGlobal.isLogin) history.push('/login');
 
   const handleSave = async () => {
     if (title !== '' && content !== '') {
@@ -114,9 +118,9 @@ function Dashboard() {
       </div>
 
       <hr />
-      {dataNotes.length > 0 ? (
+      {dataGlobal.notes.length > 0 ? (
         <Fragment>
-          {dataNotes.map((data) => {
+          {dataGlobal.notes.map((data) => {
             return (
               <div
                 className='notes-card'
