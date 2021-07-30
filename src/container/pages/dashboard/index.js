@@ -25,7 +25,6 @@ function Dashboard() {
 
   useEffect(() => {
     (async () => {
-      console.log(userData.uid);
       const dataUserFirebase = await getDataFromFirebase(userData, dispatch);
       return dataUserFirebase;
     })();
