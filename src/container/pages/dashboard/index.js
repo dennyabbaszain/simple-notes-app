@@ -23,14 +23,13 @@ function Dashboard() {
 
   useEffect(() => {
     (async () => {
-      const userData = JSON.parse(localStorage.getItem('userData'));
       const dataUserFirebase = await getDataFromFirebase(
         userData.uid,
         dispatch
       );
       return dataUserFirebase;
     })();
-  }, []);
+  }, [dispatch, userData]);
 
   const handleSave = async () => {
     if (title !== '' && content !== '') {
