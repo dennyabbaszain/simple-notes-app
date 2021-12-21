@@ -1,5 +1,7 @@
 # Simple Notes App 
 
+website notes app
+
 ## Featured :
 - Create note
 - Post note
