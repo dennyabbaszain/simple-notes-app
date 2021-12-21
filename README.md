@@ -11,6 +11,7 @@
 - Firebase(RealtimeDatabase)
 - Sass
 - Axios
+- Redux
 
 
 
