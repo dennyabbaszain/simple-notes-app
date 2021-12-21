@@ -1,11 +1,13 @@
 # Simple Notes App with Firebase
 
+## Utilized :
+- React(CRA)
+- Firebase(RealtimeDatabase)
+- Sass
+- Axios
 
-## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
 In the project directory, you can run:
 
